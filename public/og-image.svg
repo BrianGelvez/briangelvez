@@ -1,0 +1,18 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0A0A0F"/>
+  <circle cx="932" cy="136" r="150" fill="#00FF88" fill-opacity="0.08"/>
+  <circle cx="258" cy="531" r="190" fill="#3B82F6" fill-opacity="0.08"/>
+  <rect x="48" y="48" width="1104" height="534" rx="32" fill="#111118" stroke="url(#paint0_linear)"/>
+  <path d="M48 136H1152" stroke="white" stroke-opacity="0.05"/>
+  <text x="96" y="166" fill="#00FF88" font-family="monospace" font-size="28" letter-spacing="8">BG // CODIGO DE HONOR</text>
+  <text x="96" y="286" fill="#F0F0F5" font-family="Arial, sans-serif" font-size="74" font-weight="700">Soldado por formacion.</text>
+  <text x="96" y="370" fill="#00FF88" font-family="Arial, sans-serif" font-size="74" font-weight="700">Developer por decision.</text>
+  <text x="96" y="448" fill="#8B8BA0" font-family="Arial, sans-serif" font-size="28">Full Stack Developer · Next.js · TypeScript · Cordoba, Argentina</text>
+  <text x="96" y="514" fill="#F0F0F5" font-family="Arial, sans-serif" font-size="24">Brian Gelvez</text>
+  <defs>
+    <linearGradient id="paint0_linear" x1="48" y1="48" x2="1152" y2="582" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#00FF88" stop-opacity="0.45"/>
+      <stop offset="1" stop-color="#3B82F6" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+</svg>
