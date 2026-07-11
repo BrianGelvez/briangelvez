@@ -1,6 +1,6 @@
 export type ExperienceItem = {
   id: string;
-  type: "military" | "work" | "Aprendizaje ";
+  type: "military" | "work" | "learning";
   company: string;
   role: string;
   location: string;

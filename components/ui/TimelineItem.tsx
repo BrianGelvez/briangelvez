@@ -1,4 +1,4 @@
-import { BriefcaseBusiness, Shield } from "lucide-react";
+import { BriefcaseBusiness, GraduationCap, Shield } from "lucide-react";
 import { ExperienceItem } from "@/types";
 import { TechBadge } from "@/components/ui/TechBadge";
 
@@ -7,7 +7,12 @@ type TimelineItemProps = {
 };
 
 export function TimelineItem({ item }: TimelineItemProps) {
-  const Icon = item.type === "military" ? Shield : BriefcaseBusiness;
+  const Icon =
+    item.type === "military"
+      ? Shield
+      : item.type === "learning"
+        ? GraduationCap
+        : BriefcaseBusiness;
 
   return (
     <article className="relative mb-8">

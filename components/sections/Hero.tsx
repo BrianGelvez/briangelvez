@@ -4,14 +4,33 @@ import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowDownRight, Sparkles } from "lucide-react";
+import { MouseEvent, useCallback } from "react";
 import { AnimatedText } from "@/components/ui/AnimatedText";
 import { Counter } from "@/components/ui/Counter";
 import { ParticlesBackground } from "@/components/ui/ParticlesBackground";
+import { useLenisScroll } from "@/components/ui/LenisProvider";
 import { PERSONAL_INFO } from "@/lib/constants";
 
 const heroEase: [number, number, number, number] = [0.22, 1, 0.36, 1];
+const NAV_OFFSET = -80;
 
 export function Hero() {
+  const { scrollTo } = useLenisScroll();
+
+  const handleAnchor = useCallback(
+    (event: MouseEvent<HTMLAnchorElement>, href: string) => {
+      if (!href.startsWith("#")) return;
+      event.preventDefault();
+      const el = document.getElementById(href.slice(1));
+      if (!el) return;
+      if (typeof window !== "undefined" && window.history?.pushState) {
+        window.history.pushState(null, "", href);
+      }
+      scrollTo(el, { offset: NAV_OFFSET });
+    },
+    [scrollTo],
+  );
+
   return (
     <section
       id="hero"
@@ -54,14 +73,16 @@ export function Hero() {
           >
             <Link
               href="#projects"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-accent/25 bg-accent px-6 py-4 text-sm font-semibold text-background hover:-translate-y-0.5"
+              onClick={(event) => handleAnchor(event, "#projects")}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-accent/25 bg-accent px-6 py-4 text-sm font-semibold text-background transition-transform hover:-translate-y-0.5"
             >
               Ver proyectos
               <ArrowDownRight size={18} />
             </Link>
             <Link
               href="#contact"
-              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-6 py-4 text-sm font-semibold text-foreground hover:border-accent/35 hover:text-accent"
+              onClick={(event) => handleAnchor(event, "#contact")}
+              className="inline-flex items-center justify-center gap-2 rounded-full border border-white/10 bg-white/[0.03] px-6 py-4 text-sm font-semibold text-foreground transition-colors hover:border-accent/35 hover:text-accent"
             >
               Contactame
             </Link>
@@ -110,9 +131,10 @@ export function Hero() {
               <div className="relative aspect-[4/5] overflow-hidden rounded-[1.4rem] border border-white/7 bg-[linear-gradient(160deg,_rgba(59,130,246,0.16),_transparent_38%),linear-gradient(180deg,_rgba(0,255,136,0.12),_rgba(10,10,15,0.2))]">
                 <Image
                   src="/images/briangelvez.png"
-                  alt="Retrato estilizado de Brian Gelvez"
+                  alt="Retrato de Brian Gelvez, Full Stack Developer"
                   fill
                   priority
+                  sizes="(min-width: 1024px) 32vw, (min-width: 640px) 42vw, 90vw"
                   className="object-cover object-top"
                 />
                 <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-background via-background/50 to-transparent" />

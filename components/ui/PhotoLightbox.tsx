@@ -1,10 +1,51 @@
 "use client";
 
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+  useSyncExternalStore,
+} from "react";
 import { createPortal } from "react-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import type { StoryPhoto } from "@/types";
+
+const MOBILE_QUERY = "(max-width: 639px)";
+
+function subscribeMediaQuery(callback: () => void): () => void {
+  if (typeof window === "undefined") return () => {};
+  const mq = window.matchMedia(MOBILE_QUERY);
+  mq.addEventListener("change", callback);
+  return () => mq.removeEventListener("change", callback);
+}
+
+function getIsMobileSnapshot(): boolean {
+  if (typeof window === "undefined") return false;
+  return window.matchMedia(MOBILE_QUERY).matches;
+}
+
+function useIsMobile(): boolean {
+  return useSyncExternalStore(
+    subscribeMediaQuery,
+    getIsMobileSnapshot,
+    () => false,
+  );
+}
+
+function subscribeMounted(callback: () => void): () => void {
+  callback();
+  return () => {};
+}
+
+function useIsMounted(): boolean {
+  return useSyncExternalStore(
+    subscribeMounted,
+    () => true,
+    () => false,
+  );
+}
 
 type PhotoLightboxProps = {
   photos: StoryPhoto[];
@@ -23,28 +64,21 @@ export function PhotoLightbox({
   onClose,
   stageLabel,
 }: PhotoLightboxProps) {
+  const mounted = useIsMounted();
+  const isMobile = useIsMobile();
   const [index, setIndex] = useState(initialIndex);
   const [loaded, setLoaded] = useState(false);
   const [direction, setDirection] = useState(0);
-  const [mounted, setMounted] = useState(false);
-  const [isMobile, setIsMobile] = useState(false);
+  const [prevOpen, setPrevOpen] = useState(open);
   const thumbsRef = useRef<HTMLDivElement>(null);
 
-  useEffect(() => {
-    setMounted(true);
-    const mq = window.matchMedia("(max-width: 639px)");
-    setIsMobile(mq.matches);
-    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
-    mq.addEventListener("change", handler);
-    return () => mq.removeEventListener("change", handler);
-  }, []);
-
-  useEffect(() => {
+  if (prevOpen !== open) {
+    setPrevOpen(open);
     if (open) {
       setIndex(initialIndex);
       setDirection(0);
     }
-  }, [open, initialIndex]);
+  }
 
   const goTo = useCallback(
     (i: number, dir: number) => {

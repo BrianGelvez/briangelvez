@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, GitBranch, Globe } from "lucide-react";
 import { Project } from "@/types";
@@ -11,12 +12,13 @@ type ProjectCardProps = {
 export function ProjectCard({ project, featured = false }: ProjectCardProps) {
   return (
     <article className="panel-border section-grid group rounded-[2rem] p-6 sm:p-7">
-      <div className="overflow-hidden rounded-2xl border border-white/8">
-        <img
+      <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-white/8">
+        <Image
           src={project.image}
           alt={project.imageAlt}
-          className="h-48 w-full object-cover transition-transform duration-500 group-hover:scale-105 sm:h-56"
-          loading="lazy"
+          fill
+          sizes="(min-width: 1280px) 40vw, (min-width: 640px) 80vw, 92vw"
+          className="object-cover transition-transform duration-500 group-hover:scale-105"
         />
       </div>
 

@@ -12,9 +12,9 @@ export const PERSONAL_INFO = {
   name: "Brian Gelvez",
   role: "Full Stack Developer",
   location: "Córdoba, Argentina",
-  email: "brian@example.com",
+  email: "briannn97@gmail.com",
   github: "https://github.com/briangelvez",
-  linkedin: "https://www.linkedin.com/in/brian-gelvez/",
+  linkedin: "https://www.linkedin.com/in/briangelvez97/",
   tagline: "Software a medida.",
   heroHeadline:
     "Construyo aplicaciones para negocios y equipos que necesitan soluciones reales.",
@@ -49,7 +49,7 @@ export const STORY_STAGES: StoryStage[] = [
       {
         src: "/images/ejercito3.jpg",
         alt: "Entrenamiento de buceo",
-        caption: "Salto en fuera aerea Argentina",
+        caption: "Salto en Fuerza Aérea Argentina",
       },
       {
         src: "/images/ejercito4.jpg",
@@ -162,8 +162,8 @@ export const EXPERIENCE: ExperienceItem[] = [
     highlight: "10+ saltos en paracaídas",
   },
   {
-    id: "autodidacta ",
-    type: "Aprendizaje ",
+    id: "autodidacta",
+    type: "learning",
     company: "Formación en desarrollo web",
     role: "Aprendizaje autodidacta + Bootcamp Soy Henry",
     location: "Argentina",
@@ -198,7 +198,7 @@ export const EXPERIENCE: ExperienceItem[] = [
       "Mi primer trabajo como desarrollador. Kemis es una empresa de software brasilera donde trabajé en una plataforma educativa: una academia de cursos online con panel de profesores y panel de alumnos. Los alumnos tenían distintos planes de acceso y al completar un curso recibían un certificado. Trabajé codo a codo con dos seniors que me exigían entender y escribir cada línea de código. Aprendí muchísimo en esos meses.",
     achievements: [
       "Migramos el frontend de Create React App a Next.js 14.",
-      "Reesctructuramos la lógica de exámenes.",
+      "Reestructuramos la lógica de exámenes.",
       "Construí la generación de certificados PDF al completar cursos.",
       "Trabajé lógica de negocio real en el backend.",
     ],
@@ -280,7 +280,7 @@ export const PROJECTS: Project[] = [
     id: "chatbot-cooperativa",
     title: "Chatbot WhatsApp & Web",
     subtitle: "Cooperativa La Dormida",
-    image: "https://placehold.co/1200x675/0b1220/22d3ee?text=Chatbot+WhatsApp+%26+Web",
+    image: "/images/chatbotweb.png",
     imageAlt: "Vista del chatbot WhatsApp y web para la cooperativa",
     description:
       "Asistente virtual 24/7 para solicitar facturas por número de cuenta y resolver consultas frecuentes desde WhatsApp y web.",
@@ -292,48 +292,42 @@ export const PROJECTS: Project[] = [
     ],
     status: "production",
     liveUrl: "https://cooperativaladormida.com",
-    githubUrl: "https://github.com/briangelvez",
   },
   {
     id: "gestion-socios",
     title: "Sistema de Gestión de Socios",
     subtitle: "Cooperativa La Dormida",
-    image: "https://placehold.co/1200x675/111827/22c55e?text=Sistema+de+Gestion+de+Socios",
+    image: "/images/sistemapfc.png",
     imageAlt: "Dashboard del sistema de gestión de socios",
     description:
-      "Sistema interno para gestionar más de 2.000 socios activos con integración en tiempo real al sistema de facturación legacy mediante una VIEW personalizada en SQL Server.",
+      "Sistema interno para gestionar más de 2.200 socios activos con integración en tiempo real al sistema de facturación legacy mediante una VIEW personalizada en SQL Server para poder identificar aquellos socios que cuenten con el plan.",
     stack: ["Next.js", "Prisma", "SQL Server", "PostgreSQL"],
     metrics: ["+2.000 socios gestionados", "Integración legacy en tiempo real"],
     status: "production",
-    liveUrl: "https://cooperativaladormida.com",
-    githubUrl: "https://github.com/briangelvez",
   },
   {
     id: "academia-kemis",
     title: "Academia Online SaaS",
     subtitle: "Kemis · Brasil",
-    image: "https://placehold.co/1200x675/1f2937/f59e0b?text=Academia+Online+SaaS",
+    image: "/images/kemis.png",
     imageAlt: "Pantalla de academia online SaaS con cursos y exámenes",
     description:
       "Plataforma de academia online con cursos, clases, exámenes y certificados PDF con firma digital sobre una base de Next.js.",
     stack: ["Next.js", "Node.js", "PostgreSQL", "TypeORM"],
     metrics: ["Migración CRA -> Next.js", "Certificados PDF firmados"],
     status: "client",
-    githubUrl: "https://github.com/briangelvez",
   },
   {
     id: "freelance-suite",
     title: "E-commerce & Chatbots para clientes",
     subtitle: "Freelance / productos propios",
-    image: "https://placehold.co/1200x675/0f172a/a855f7?text=E-commerce+%26+Chatbots",
+    image: "/images/proyecto04.png",
     imageAlt: "Colección de proyectos e-commerce y chatbots",
     description:
       "Desarrollo de e-commerces funcionales, chatbots personalizados y sitios web para clientes reales, además de productos SaaS propios en etapa de maduración.",
     stack: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Vercel"],
     metrics: ["Soluciones reales para clientes", "En evolución hacia SaaS"],
     status: "client",
-    liveUrl: "https://cooperativaladormida.com",
-    githubUrl: "https://github.com/briangelvez",
   },
 ];
 
@@ -370,7 +364,7 @@ export const SKILLS = {
     title: "Persistencia y acceso a datos",
     items: [
       "PostgreSQL",
-      "Firabase",
+      "Firebase",
       "SQL Server",
       "Supabase",
       "Prisma ORM",
@@ -378,7 +372,7 @@ export const SKILLS = {
     ],
   },
   tools: {
-    eyebrow: "Herramientas e integracione",
+    eyebrow: "Herramientas e integraciones",
     title: "Servicios, despliegue y flujo de trabajo",
     items: [
       "IA en Gnal.",
