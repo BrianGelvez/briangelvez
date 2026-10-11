@@ -29,7 +29,7 @@ export function Skills() {
                 </div>
                 <div className="flex flex-wrap gap-3">
                   {value.items.map((item) => (
-                    <TechBadge key={item} label={item} highlight={item === "Next.js" || item === "NestJS" || item === "PostgreSQL" || item === "IA en Gnal."} />
+                    <TechBadge key={item} label={item} highlight={item === "Next.js" || item === "NestJS" || item === "PostgreSQL" || item === "Cursor (IDE)"} />
                   ))}
                 </div>
               </article>

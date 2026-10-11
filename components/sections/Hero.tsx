@@ -96,7 +96,7 @@ export function Hero() {
           >
             <Counter value={10} suffix=" +" label="Proyectos creados" />
             <Counter
-              value={750}
+              value={950}
               suffix=" +"
               label="conversaciones en producción"
             />

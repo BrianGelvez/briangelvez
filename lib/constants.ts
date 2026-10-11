@@ -112,6 +112,11 @@ export const STORY_STAGES: StoryStage[] = [
         alt: "Planificación en pizarra",
         caption: "Web oficial e institucional de la cooperativa Eléctrica de San José de la Dormida",
       },
+      {
+        src: "/images/gestionpfc.png",
+        alt: "Sistema de gestion para socios de la cooperativa",
+        caption: "Proyecto creado totalmente a medida para la cooperativa",
+      },
     ],
   },
 ];
@@ -364,8 +369,8 @@ export const SKILLS = {
     title: "Persistencia y acceso a datos",
     items: [
       "PostgreSQL",
-      "Firebase",
       "SQL Server",
+      "Firebase",
       "Supabase",
       "Prisma ORM",
       "TypeORM",
@@ -375,9 +380,8 @@ export const SKILLS = {
     eyebrow: "Herramientas e integraciones",
     title: "Servicios, despliegue y flujo de trabajo",
     items: [
-      "IA en Gnal.",
+      "Cursor (IDE)",
       "Open code",
-      "Cursor",
       "Antigravity",
       "Codex",
       "Git",
@@ -385,6 +389,7 @@ export const SKILLS = {
       "Vercel",
       "Docker",
       "WhatsApp Cloud API",
+      "IA en Gnal.",
     ],
   },
 };
