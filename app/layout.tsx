@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Inter, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next"
 import { Footer } from "@/components/layout/Footer";
 import { Navbar } from "@/components/layout/Navbar";
 import { LenisProvider } from "@/components/ui/LenisProvider";
@@ -101,6 +102,7 @@ export default function RootLayout({
         className="min-h-full bg-background text-foreground"
         suppressHydrationWarning
       >
+        <Analytics />
         <LenisProvider>
           <div className="relative flex min-h-screen flex-col">
             <Navbar />
